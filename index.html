@@ -4,337 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kodai Nayaki | Project Library</title>
-    <style>
-      :root {
-        color: #172033;
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        background: #f6f8fb;
-        margin: 0;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .hero {
-        background:
-          linear-gradient(rgba(11, 18, 32, 0.7), rgba(11, 18, 32, 0.7)),
-          url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=80")
-            center / cover;
-        color: #ffffff;
-        padding: 30px 20px 82px;
-      }
-
-      .wrap {
-        margin: 0 auto;
-        max-width: 1080px;
-      }
-
-      nav {
-        align-items: center;
-        display: flex;
-        gap: 18px;
-        justify-content: space-between;
-      }
-
-      .brand {
-        font-size: 18px;
-        font-weight: 800;
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 18px;
-      }
-
-      .nav-links a {
-        color: rgba(255, 255, 255, 0.84);
-        font-weight: 700;
-        text-decoration: none;
-      }
-
-      .hero-content {
-        max-width: 780px;
-        padding-top: 86px;
-      }
-
-      .eyebrow {
-        color: #a7f3d0;
-        font-size: 14px;
-        font-weight: 800;
-        margin: 0 0 10px;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        font-size: clamp(38px, 7vw, 68px);
-        line-height: 1;
-        margin: 0;
-      }
-
-      .hero p {
-        color: rgba(255, 255, 255, 0.86);
-        font-size: 20px;
-        margin: 22px 0 0;
-        max-width: 650px;
-      }
-
-      main {
-        padding: 64px 20px;
-      }
-
-      .section-heading {
-        margin-bottom: 24px;
-      }
-
-      h2 {
-        font-size: 32px;
-        line-height: 1.1;
-        margin: 0;
-      }
-
-      .section-heading p {
-        color: #5f6f86;
-        margin: 8px 0 0;
-        max-width: 680px;
-      }
-
-      .folder-grid {
-        display: grid;
-        gap: 18px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .folder {
-        background: #ffffff;
-        border: 1px solid #dce5ef;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-
-      .folder-header {
-        align-items: center;
-        background: #eef6ff;
-        border-bottom: 1px solid #dce5ef;
-        display: flex;
-        gap: 14px;
-        padding: 20px;
-      }
-
-      .folder-icon {
-        align-items: center;
-        background: #2563eb;
-        border-radius: 8px;
-        color: #ffffff;
-        display: flex;
-        flex: 0 0 46px;
-        font-size: 24px;
-        font-weight: 900;
-        height: 46px;
-        justify-content: center;
-      }
-
-      .folder-header h3 {
-        font-size: 22px;
-        margin: 0;
-      }
-
-      .folder-header p {
-        color: #607086;
-        margin: 2px 0 0;
-      }
-
-      .project-list {
-        display: grid;
-        gap: 0;
-        margin: 0;
-        padding: 0;
-      }
-
-      .project {
-        border-bottom: 1px solid #edf2f7;
-        display: grid;
-        gap: 10px;
-        list-style: none;
-        padding: 18px 20px;
-      }
-
-      .project:last-child {
-        border-bottom: 0;
-      }
-
-      .project h4 {
-        font-size: 18px;
-        margin: 0;
-      }
-
-      .project p {
-        color: #54657a;
-        margin: 0;
-      }
-
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .tag {
-        background: #f1f5f9;
-        border-radius: 999px;
-        color: #405169;
-        font-size: 12px;
-        font-weight: 750;
-        padding: 5px 9px;
-      }
-
-      .placeholder {
-        background: #fffbeb;
-        border-top: 1px solid #fde68a;
-        color: #76520f;
-        font-weight: 700;
-        padding: 14px 20px;
-      }
-
-      footer {
-        background: #0b1220;
-        color: #ffffff;
-        padding: 34px 20px;
-      }
-
-      footer p {
-        color: rgba(255, 255, 255, 0.72);
-        margin: 8px 0 0;
-      }
-
-      @media (max-width: 780px) {
-        .folder-grid {
-          grid-template-columns: 1fr;
-        }
-
-        nav {
-          align-items: start;
-          flex-direction: column;
-        }
-
-        .hero-content {
-          padding-top: 56px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="hero">
-      <div class="wrap">
-        <nav aria-label="Main navigation">
-          <a class="brand" href="#">Kodai Nayaki</a>
-          <div class="nav-links">
-            <a href="#folders">Folders</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
-
-        <div class="hero-content">
-          <p class="eyebrow">Project library</p>
-          <h1>Apps, experiments, and learning projects organized by folder.</h1>
-          <p>
-            A simple GitHub Pages index for the projects I build, from Freshworks custom apps
-            to Python and AI learning work.
-          </p>
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="brand" href="index.html">Kodai Nayaki</a>
+        <div class="nav-links">
+          <a href="freshworks-custom-apps.html">Freshworks Apps</a>
+          <a href="ai-learning.html">AI Learning</a>
         </div>
+      </nav>
+
+      <div class="hero-content wrap">
+        <p class="eyebrow">Project library</p>
+        <h1>Apps, experiments, and learning projects organized by topic.</h1>
+        <p>
+          A simple public website for the work I build, starting with Freshworks custom apps
+          and Python plus AI learning projects.
+        </p>
       </div>
     </header>
 
-    <main id="folders">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2>Project Folders</h2>
-          <p>
-            Each folder groups related work. The names and descriptions can be updated as the
-            project library grows.
-          </p>
-        </div>
+    <main class="wrap page-section">
+      <div class="section-heading">
+        <h2>Project Folders</h2>
+        <p>Choose a folder to view the projects inside it.</p>
+      </div>
 
-        <div class="folder-grid">
-          <section class="folder" aria-labelledby="freshworks-heading">
-            <div class="folder-header">
-              <div class="folder-icon" aria-hidden="true">FW</div>
-              <div>
-                <h3 id="freshworks-heading">Freshworks Custom Apps</h3>
-                <p>Custom apps built for Freshworks and support workflows.</p>
-              </div>
-            </div>
+      <div class="folder-grid">
+        <a class="folder-card" href="freshworks-custom-apps.html">
+          <span class="folder-icon">FW</span>
+          <span>
+            <strong>Freshworks Custom Apps</strong>
+            <small>Similar Ticket Suggester and Live Queue Management App.</small>
+          </span>
+        </a>
 
-            <ul class="project-list">
-              <li class="project">
-                <h4>Similar Ticket Suggester</h4>
-                <p>
-                  Suggests related or similar customer tickets so agents can find repeated issues
-                  and useful context faster.
-                </p>
-                <div class="tags">
-                  <span class="tag">Freshworks</span>
-                  <span class="tag">Support</span>
-                  <span class="tag">Ticket Matching</span>
-                </div>
-              </li>
-              <li class="project">
-                <h4>Live Queue Management App</h4>
-                <p>
-                  Helps teams track waiting customers, monitor service flow, and manage active
-                  queue status from one place.
-                </p>
-                <div class="tags">
-                  <span class="tag">Freshworks</span>
-                  <span class="tag">Queue Management</span>
-                  <span class="tag">Live Tracking</span>
-                </div>
-              </li>
-            </ul>
-          </section>
-
-          <section class="folder" aria-labelledby="ai-heading">
-            <div class="folder-header">
-              <div class="folder-icon" aria-hidden="true">AI</div>
-              <div>
-                <h3 id="ai-heading">AI Learning</h3>
-                <p>Python, AI, and machine learning practice projects.</p>
-              </div>
-            </div>
-
-            <ul class="project-list">
-              <li class="project">
-                <h4>Python and AI Project Learning</h4>
-                <p>
-                  A home for Python exercises, AI experiments, notebooks, small demos, and
-                  learning projects. This folder can be renamed later.
-                </p>
-                <div class="tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">AI</span>
-                  <span class="tag">Learning</span>
-                </div>
-              </li>
-            </ul>
-            <div class="placeholder">More AI learning projects can be added here later.</div>
-          </section>
-        </div>
+        <a class="folder-card" href="ai-learning.html">
+          <span class="folder-icon">AI</span>
+          <span>
+            <strong>AI Learning</strong>
+            <small>Python, AI, machine learning practice, and experiments.</small>
+          </span>
+        </a>
       </div>
     </main>
 
-    <footer id="contact">
+    <footer class="site-footer">
       <div class="wrap">
-        <strong>Contact</strong>
-        <p>Update this area later with your email, LinkedIn, or GitHub links.</p>
+        <strong>Kodai Nayaki</strong>
+        <p>More project folders and links can be added as the library grows.</p>
       </div>
     </footer>
   </body>
